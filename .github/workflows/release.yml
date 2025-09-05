@@ -1,0 +1,49 @@
+name: Publish Python Package
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1 Checkout the code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2 Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      # 3 Install build dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install build twine setuptools wheel
+
+      # 4 Extract version from Git tag
+      - name: Set package version from Git tag
+        id: version
+        run: |
+          echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+
+      # 5 Optionally update pyproject.toml or setup.py
+      # This assumes you are using pyproject.toml with dynamic version:
+      # [tool.setuptools_scm]
+      # version = { from_tag = true }
+      # If you need manual replacement in setup.py, you can add a sed command here.
+
+      # 6 Build the package
+      - name: Build package
+        run: python -m build
+
+      # 7 Publish to PyPI
+      - name: Publish to PyPI
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+        run: python -m twine upload dist/*
