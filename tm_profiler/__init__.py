@@ -5,9 +5,9 @@ Time Profiler
 The tm_profiler module for time profiling of functions
 
 +---------------+--------------------------------------------+
-| GitHub        | https://github.com/NorchaHack/tm-profiler  |
+| GitHub        | https://github.com/NorchaHack/tm_profiler  |
 +---------------+--------------------------------------------+
-| Pypi          | https://pypi.org/project/tm-profiler       |
+| Pypi          | https://pypi.org/project/tm_profiler       |
 +---------------+--------------------------------------------+
 
 
@@ -56,5 +56,5 @@ __all__ = [
 
 __author__ = "Normunds Pureklis <norchahack@gmail.com>"
 __status__ = "development"
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 __date__ = "05 Sep 2025"

@@ -1,11 +1,11 @@
-import time
 import os
+import time
 import types
 from enum import Enum
 from functools import wraps
 
 # NOTE: This needs to be in sync with __init__.py
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 
 
 class LibConf:
