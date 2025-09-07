@@ -7,54 +7,75 @@ The tm_profiler module for time profiling of functions
 +---------------+--------------------------------------------+
 | GitHub        | https://github.com/NorchaHack/tm_profiler  |
 +---------------+--------------------------------------------+
-| Pypi          | https://pypi.org/project/tm_profiler       |
+| Pypi          | https://pypi.org/project/tm-profiler       |
 +---------------+--------------------------------------------+
 
 
 Installation
 ============
 
-Releases of :py:mod:`tm_profiler` can be installed
+Releases of `tm_profiler` can be installed
 using pip
 
-.. code:: bash
-
-    pip install tm_profiler
+    pip install tm-profiler
 
 Time Profiler Basic Usage
 =========================
 
-............
+import tm_profiler as tp
+
+@tp.profile()
+def func():
+    return "Func - return value"
+
+func()
+
+....
+
+tp.print_stat()
+
+Output:
+------------------------------------------------------------------
+## Time Profiler: #
+------------------------------------------------------------------
+| Name                 | Time total(s) | Calls | Time average(s) |
+------------------------------------------------------------------
+| main.py[func]        |        0.0001 |     1 |          0.0001 |
+------------------------------------------------------------------
 
 """
 
-# __submodules__ = [
-#     'tm_profiler',
-#     'ipython_extension',
-# ]
-#
-# __autogen__ = """
-# mkinit ./tm_profiler/__init__.py --relative
-# mkinit ./tm_profiler/__init__.py --relative -w
-# """
+from .tm_profiler import (profile, enable, disable, reset,
+                          print_stat, print_last,
+                          set_output_dec, set_name_format,
+                          TpNameFormat, TpSort)
 
-from .tm_profiler import (profile, print_stat, print_table, print_last,
-                          set_output_dec, set_output_name_format,
-                          FuncNameFormat, log_time_enabled)
-
+from .tm_profiler import (profile as tp_profile,
+                          enable as tp_enable,
+                          disable as tp_disable,
+                          reset as tp_reset,
+                          print_stat as tp_print_stat,
+                          print_last as tp_print_last,
+                          set_output_dec as tp_set_output_dec,
+                          set_name_format as tp_set_name_format,
+                          TpNameFormat,
+                          TpSort
+                          )
 
 __all__ = [
-    "profile",
-    # "sum_by_pairs_to_file",
-    # "sum_file_total",
-    # "read_numbers_from_text_file",
-    # "set_parse_float",
-    # "set_max_number",
-    # "set_min_number",
-    # "reset_to_default",
+    "tp_profile",
+    "tp_enable",
+    "tp_disable",
+    "tp_reset",
+    "tp_print_stat",
+    "tp_print_last",
+    "tp_set_output_dec",
+    "tp_set_name_format",
+    "TpNameFormat",
+    "TpSort"
 ]
 
 __author__ = "Normunds Pureklis <norchahack@gmail.com>"
 __status__ = "development"
-__version__ = "0.0.2"
-__date__ = "05 Sep 2025"
+__version__ = "0.0.3"
+__date__ = "07 Sep 2025"
