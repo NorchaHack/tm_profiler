@@ -234,7 +234,8 @@ def print_stat(sort_by: TpSort = TpSort.NAME) -> None:
     :type sort_by: TpSort
     :return: None
     """
-    print(TimeProfiler().gen_statistic_table(sort_by))
+    if TimeProfiler().is_enabled():
+        print(TimeProfiler().gen_statistic_table(sort_by))
 
 
 def print_last() -> None:
@@ -242,7 +243,8 @@ def print_last() -> None:
     Print Time Profiler last recorded entry.
     :return: None
     """
-    print(TimeProfiler().get_last())
+    if TimeProfiler().is_enabled():
+        print(TimeProfiler().get_last())
 
 
 # Decorators
