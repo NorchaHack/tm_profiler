@@ -7,7 +7,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
     long_description = "\n" + fh.read()
 
-VERSION = '0.0.3'
+VERSION = '3.0.1'
 DESCRIPTION = 'Time profiler'
 LONG_DESCRIPTION = 'Time profiler.'
 
@@ -26,10 +26,10 @@ setup(
     install_requires=[],
     keywords=['python', 'profiler', 'time', 'time profiler'],
     classifiers=[
-        "Development Status :: 4 - Beta",
+        "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
-        "Programming Language :: Python :: >=3.8",
+        "Programming Language :: Python :: 3.8",
         "Operating System :: Unix",
         "Operating System :: MacOS :: MacOS X",
         "Operating System :: Microsoft :: Windows",

@@ -5,7 +5,7 @@ from enum import Enum
 from functools import wraps
 
 # NOTE: __version__ needs to be in sync with __init__.py
-__version__ = '0.0.3'
+__version__ = '3.0.1'
 
 from typing import List, Tuple, Dict
 
