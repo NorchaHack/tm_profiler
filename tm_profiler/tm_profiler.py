@@ -7,6 +7,8 @@ from functools import wraps
 # NOTE: __version__ needs to be in sync with __init__.py
 __version__ = '0.0.3'
 
+from typing import List, Tuple, Dict
+
 
 class TpNameFormat(Enum):
     """
@@ -41,8 +43,8 @@ class TimeProfiler:
 
     def init(self):
         self.__profiler_enabled = True
-        self.__time_counters: dict[str, float] = {}
-        self.__call_counters: dict[str, int] = {}
+        self.__time_counters: Dict[str, float] = {}
+        self.__call_counters: Dict[str, int] = {}
         self.__last_name: str = "none"
         self.__last_time: float = .0
         self.__last_call: int = 0
@@ -121,7 +123,7 @@ class TimeProfiler:
         """
         return self.gen_print_line(self.__last_name, self.__last_call, self.__last_time)
 
-    def _get_sorted_stat(self, sort_by: TpSort = TpSort.NAME) -> list[tuple[str, int, float, float]]:
+    def _get_sorted_stat(self, sort_by: TpSort = TpSort.NAME) -> List[Tuple[str, int, float, float]]:
         """
         Get Time Profiler sorted statistic data.
         :param sort_by: parameter for sorting statistics [name, calls, total, avg]

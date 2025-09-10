@@ -7,7 +7,7 @@ The tm_profiler module for time profiling of functions
 +---------------+--------------------------------------------+
 | GitHub        | https://github.com/NorchaHack/tm_profiler  |
 +---------------+--------------------------------------------+
-| Pypi          | https://pypi.org/project/tm-profiler       |
+| Pypi          | https://pypi.org/project/tm-profiler/      |
 +---------------+--------------------------------------------+
 
 
