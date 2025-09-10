@@ -45,23 +45,23 @@ class TestTmProfilerSortOutput(object):
         captured = capsys.readouterr()
 
         expected = [
-            r"-+",
-            r"## Time Profiler: #",
-            r"-+",
-            r"\|\sName\s+\|\sTime total\(s\)\s+\|\sCalls\s+\|\sTime\saverage\(s\)\s+\|",
-            r"-+",
-            r"\|\stest_tp_statistic_output.py\[func_a\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*10\s\|\s+\d+\.\d\d\d\d\s\|",
-            r"\|\stest_tp_statistic_output.py\[func_b\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*8\s\|\s+\d+\.\d\d\d\d\s\|",
-            r"\|\stest_tp_statistic_output.py\[func_c\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*5\s\|\s+\d+\.\d\d\d\d\s\|",
-            r"-+",
+            r"^-+$",
+            r"^## Time Profiler: #$",
+            r"^-+$",
+            r"^\|\sName\s+\|\sTime total\(s\)\s+\|\sCalls\s+\|\sTime\saverage\(s\)\s+\|$",
+            r"^-+$",
+            r"^\|\stest_tp_statistic_output.py\[func_a\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*10\s\|\s+\d+\.\d\d\d\d\s\|$",
+            r"^\|\stest_tp_statistic_output.py\[func_b\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*8\s\|\s+\d+\.\d\d\d\d\s\|$",
+            r"^\|\stest_tp_statistic_output.py\[func_c\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*5\s\|\s+\d+\.\d\d\d\d\s\|$",
+            r"^-+$",
         ]
 
         for i, line in enumerate(captured.out.splitlines()):
-            assert re.fullmatch(
+            assert (re.match(
                 expected[i],
                 line,
                 re.DOTALL
-            )
+            ))
         assert captured.err == ""
 
     @pytest.mark.forked
@@ -79,19 +79,19 @@ class TestTmProfilerSortOutput(object):
         captured = capsys.readouterr()
 
         expected = [
-            r"-+",
-            r"## Time Profiler: #",
-            r"-+",
-            r"\|\sName\s+\|\sTime total\(s\)\s+\|\sCalls\s+\|\sTime\saverage\(s\)\s+\|",
-            r"-+",
-            r"\|\stest_tp_statistic_output.py\[func_c\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*5\s\|\s+\d+\.\d\d\d\d\s\|",
-            r"\|\stest_tp_statistic_output.py\[func_b\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*8\s\|\s+\d+\.\d\d\d\d\s\|",
-            r"\|\stest_tp_statistic_output.py\[func_a\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*10\s\|\s+\d+\.\d\d\d\d\s\|",
-            r"-+",
+            r"^-+$",
+            r"^## Time Profiler: #$",
+            r"^-+$",
+            r"^\|\sName\s+\|\sTime total\(s\)\s+\|\sCalls\s+\|\sTime\saverage\(s\)\s+\|$",
+            r"^-+$",
+            r"^\|\stest_tp_statistic_output.py\[func_c\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*5\s\|\s+\d+\.\d\d\d\d\s\|$",
+            r"^\|\stest_tp_statistic_output.py\[func_b\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*8\s\|\s+\d+\.\d\d\d\d\s\|$",
+            r"^\|\stest_tp_statistic_output.py\[func_a\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*10\s\|\s+\d+\.\d\d\d\d\s\|$",
+            r"^-+$",
         ]
 
         for i, line in enumerate(captured.out.splitlines()):
-            assert re.fullmatch(
+            assert re.match(
                 expected[i],
                 line,
                 re.DOTALL
@@ -113,23 +113,23 @@ class TestTmProfilerSortOutput(object):
         captured = capsys.readouterr()
 
         expected = [
-            r"-+",
-            r"## Time Profiler: #",
-            r"-+",
-            r"\|\sName\s+\|\sTime total\(s\)\s+\|\sCalls\s+\|\sTime\saverage\(s\)\s+\|",
-            r"-+",
-            r"\|\stest_tp_statistic_output.py\[func_b\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*10\s\|\s+\d+\.\d\d\d\d\s\|",
-            r"\|\stest_tp_statistic_output.py\[func_a\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*10\s\|\s+\d+\.\d\d\d\d\s\|",
-            r"\|\stest_tp_statistic_output.py\[func_c\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*10\s\|\s+\d+\.\d\d\d\d\s\|",
-            r"-+",
+            r"^-+$",
+            r"^## Time Profiler: #$",
+            r"^-+$",
+            r"^\|\sName\s+\|\sTime total\(s\)\s+\|\sCalls\s+\|\sTime\saverage\(s\)\s+\|$",
+            r"^-+$",
+            r"^\|\stest_tp_statistic_output.py\[func_b\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*10\s\|\s+\d+\.\d\d\d\d\s\|$",
+            r"^\|\stest_tp_statistic_output.py\[func_a\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*10\s\|\s+\d+\.\d\d\d\d\s\|$",
+            r"^\|\stest_tp_statistic_output.py\[func_c\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*10\s\|\s+\d+\.\d\d\d\d\s\|$",
+            r"^-+$",
         ]
 
         for i, line in enumerate(captured.out.splitlines()):
-            assert re.fullmatch(
+            assert (re.match(
                 expected[i],
                 line,
                 re.DOTALL
-            )
+            ))
         assert captured.err == ""
 
     @pytest.mark.forked
@@ -147,19 +147,19 @@ class TestTmProfilerSortOutput(object):
         captured = capsys.readouterr()
 
         expected = [
-            r"-+",
-            r"## Time Profiler: #",
-            r"-+",
-            r"\|\sName\s+\|\sTime total\(s\)\s+\|\sCalls\s+\|\sTime\saverage\(s\)\s+\|",
-            r"-+",
-            r"\|\stest_tp_statistic_output.py\[func_b\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*10\s\|\s+\d+\.\d\d\d\d\s\|",
-            r"\|\stest_tp_statistic_output.py\[func_a\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*10\s\|\s+\d+\.\d\d\d\d\s\|",
-            r"\|\stest_tp_statistic_output.py\[func_c\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*10\s\|\s+\d+\.\d\d\d\d\s\|",
-            r"-+",
+            r"^-+$",
+            r"^## Time Profiler: #$",
+            r"^-+$",
+            r"^\|\sName\s+\|\sTime total\(s\)\s+\|\sCalls\s+\|\sTime\saverage\(s\)\s+\|$",
+            r"^-+$",
+            r"^\|\stest_tp_statistic_output.py\[func_b\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*10\s\|\s+\d+\.\d\d\d\d\s\|$",
+            r"^\|\stest_tp_statistic_output.py\[func_a\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*10\s\|\s+\d+\.\d\d\d\d\s\|$",
+            r"^\|\stest_tp_statistic_output.py\[func_c\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*10\s\|\s+\d+\.\d\d\d\d\s\|$",
+            r"^-+$",
         ]
 
         for i, line in enumerate(captured.out.splitlines()):
-            assert re.fullmatch(
+            assert re.match(
                 expected[i],
                 line,
                 re.DOTALL

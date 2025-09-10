@@ -23,8 +23,8 @@ class TestTmProfilerOutputInline(object):
 
         captured = capsys.readouterr()
 
-        assert re.fullmatch(
-            r"##\sTP\s#\sFunction\s\(test_tp_output_inline.py\[func\]:1\)\s-\stook:\s\d+\.\d\d\d\ds\s#\nreturned value\n",
+        assert re.match(
+            r"^##\sTP\s#\sFunction\s\(test_tp_output_inline.py\[func\]:1\)\s-\stook:\s\d+\.\d\d\d\ds\s#\nreturned value\n$",
             captured.out,
             re.DOTALL
         )

@@ -1,7 +1,7 @@
 # tm_profiler
 ### Python - time profiler
 
->!!!Under construction!!! Beta version! Currently, in testing!
+> Package version 2.x.x is to support Python 2 (2.7 and newer versions).<br>For Python >= 3.8, please use package version >= 3.0.1.
 
     Developed by Normunds Pureklis (c) 2025
 

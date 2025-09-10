@@ -14,8 +14,7 @@ The tm_profiler module for time profiling of functions
 Installation
 ============
 
-Releases of `tm_profiler` can be installed
-using pip
+Releases of `tm_profiler` can be installed using pip
 
     pip install tm-profiler
 
@@ -76,6 +75,6 @@ __all__ = [
 ]
 
 __author__ = "Normunds Pureklis <norchahack@gmail.com>"
-__status__ = "development"
-__version__ = "0.0.3"
-__date__ = "07 Sep 2025"
+__status__ = "production"
+__version__ = "2.0.1"
+__date__ = "10 Sep 2025"

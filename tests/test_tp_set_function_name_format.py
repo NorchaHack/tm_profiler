@@ -31,8 +31,8 @@ class TestTmProfilerSetFunctionNameFormat(object):
         captured = capsys.readouterr()
 
         assert ("/tests/test_tp_set_function_name_format.py[func]") in captured.out
-        assert re.fullmatch(
-            r"-+\n## Time Profiler: #\n-+\n\|\sName\s+\|\sTime total\(s\)\s+\|\sCalls\s+\|\sTime\saverage\(s\)\s+\|\n-+\n\|\s[^|]+/tests/test_tp_set_function_name_format.py\[func\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*10\s\|\s+\d+\.\d\d\d\d\s\|\n-+\n",
+        assert re.match(
+            r"^-+\n## Time Profiler: #\n-+\n\|\sName\s+\|\sTime total\(s\)\s+\|\sCalls\s+\|\sTime\saverage\(s\)\s+\|\n-+\n\|\s[^|]+/tests/test_tp_set_function_name_format.py\[func\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*10\s\|\s+\d+\.\d\d\d\d\s\|\n-+\n$",
             captured.out,
             re.DOTALL
         )
@@ -43,8 +43,8 @@ class TestTmProfilerSetFunctionNameFormat(object):
         captured = capsys.readouterr()
 
         assert "/tests/test_tp_set_function_name_format.py[func]:10)" in captured.out
-        assert re.fullmatch(
-            r"##\sTP\s#\sFunction\s\([^|]+/tests/test_tp_set_function_name_format.py\[func\]:10\)\s-\stook:\s\d+\.\d\d\d\ds\s#\n",
+        assert re.match(
+            r"^##\sTP\s#\sFunction\s\([^|]+/tests/test_tp_set_function_name_format.py\[func\]:10\)\s-\stook:\s\d+\.\d\d\d\ds\s#\n$",
             captured.out,
             re.DOTALL
         )
@@ -63,8 +63,8 @@ class TestTmProfilerSetFunctionNameFormat(object):
         captured = capsys.readouterr()
 
         assert "| tests/test_tp_set_function_name_format.py[func]" in captured.out
-        assert re.fullmatch(
-            r"-+\n## Time Profiler: #\n-+\n\|\sName\s+\|\sTime total\(s\)\s+\|\sCalls\s+\|\sTime\saverage\(s\)\s+\|\n-+\n\|\stests/test_tp_set_function_name_format.py\[func\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*10\s\|\s+\d+\.\d\d\d\d\s\|\n-+\n",
+        assert re.match(
+            r"^-+\n## Time Profiler: #\n-+\n\|\sName\s+\|\sTime total\(s\)\s+\|\sCalls\s+\|\sTime\saverage\(s\)\s+\|\n-+\n\|\stests/test_tp_set_function_name_format.py\[func\]\s+\|\s+\d+\.\d\d\d\d\s\|\s*10\s\|\s+\d+\.\d\d\d\d\s\|\n-+\n$",
             captured.out,
             re.DOTALL
         )
@@ -75,8 +75,8 @@ class TestTmProfilerSetFunctionNameFormat(object):
         captured = capsys.readouterr()
 
         assert "## TP # Function (tests/test_tp_set_function_name_format.py[func]:10)" in captured.out
-        assert re.fullmatch(
-            r"##\sTP\s#\sFunction\s\(tests/test_tp_set_function_name_format.py\[func\]:10\)\s-\stook:\s\d+\.\d\d\d\ds\s#\n",
+        assert re.match(
+            r"^##\sTP\s#\sFunction\s\(tests/test_tp_set_function_name_format.py\[func\]:10\)\s-\stook:\s\d+\.\d\d\d\ds\s#\n$",
             captured.out,
             re.DOTALL
         )

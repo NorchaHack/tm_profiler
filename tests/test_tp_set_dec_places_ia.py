@@ -27,8 +27,8 @@ class TestTmProfilerSetDecimalPlacesWithImportAll(object):
 
         captured = capsys.readouterr()
 
-        assert re.fullmatch(
-            r"##\sTP\s#\sFunction\s\(test_tp_set_dec_places_ia.py\[func\]:1\)\s-\stook:\s\d+\.\d\d\d\ds\s#\n",
+        assert re.match(
+            r"^##\sTP\s#\sFunction\s\(test_tp_set_dec_places_ia.py\[func\]:1\)\s-\stook:\s\d+\.\d\d\d\ds\s#\n$",
             captured.out,
             re.DOTALL
         )
@@ -47,8 +47,8 @@ class TestTmProfilerSetDecimalPlacesWithImportAll(object):
 
         captured = capsys.readouterr()
 
-        assert re.fullmatch(
-            r"##\sTP\s#\sFunction\s\(test_tp_set_dec_places_ia.py\[func\]:1\)\s-\stook:\s\d+\.\d\d\d\d\d\ds\s#\n",
+        assert re.match(
+            r"^##\sTP\s#\sFunction\s\(test_tp_set_dec_places_ia.py\[func\]:1\)\s-\stook:\s\d+\.\d\d\d\d\d\ds\s#\n$",
             captured.out,
             re.DOTALL
         )
